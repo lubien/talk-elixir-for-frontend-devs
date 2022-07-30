@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>Elixir para Devs Frontend</title>
 
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
@@ -16,8 +16,735 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<!-- Intro -->
+				<section data-auto-animate>
+					<img src="assets/elixir-logo.png" alt="Elixir">
+					<h1><span class="sr-only">Elixir</span> para Devs Frontend</h1>
+					<h4>lubien</h4>
+				</section>
+
+				<!-- About me -->
+				<section data-auto-animate>
+					<h2>lubien</h2>
+					<p>Alquimista desenvolvedor frontend Elixir</p>
+					<p>
+						<a href="https://www.linkedin.com/in/lubien/" target="_blank">
+							<img src="assets/linkedin.png" style="max-height: 50px; display: block; margin: 15px auto" alt="LinkedIn"> @lubien
+						</a>
+						<a href="https://www.github.com/lubien/" target="_blank">
+							<img src="assets/github.png" style="max-height: 50px; display: block; margin: 15px auto" alt="GitHub"> @lubien
+						</a>
+					</p>
+				</section>
+
+				<!-- Evolution -->
+				<section data-auto-animate>
+					<section data-auto-animate>
+						<h2>Bem Vindo ao Mundo de Desenvolvimento Web</h2>
+						<p>Vamos dar uma volta no tempo...</p>
+					</section>
+
+					<!-- SSR -->
+					<section data-auto-animate>
+						<h2>Hipermídia</h2>
+						
+						<div style="display: flex">
+							<img src="assets/myspace.webp" alt="MySpace" style="max-width: 50%">
+
+							<ul>
+								<li>SSR: Server Side Render</li>
+								<li>O backend e frontend são a mesma aplicação</li>
+								<li>Se uma função existe para o back, o front tem acesso sem uma camada extra de API</li>
+								<li>Cada interação custa um load completo de página</li>
+							</ul>
+						</div>
+					</section>
+
+					<!-- php classico -->
+					<section data-auto-animate>
+						<h2>PHP</h2>
+						
+						<div style="display: flex">
+							<pre style="width: 100%;"><code data-trim data-noescape data-line-numbers="3,10">
+								<script type="text/template">
+									<?php 
+									include_once("connection.php");
+									$result = mysql_query("SELECT * FROM users", $connection);
+
+									if(!$result){
+										die("Database query failed: ". mysql_error());
+									}
+
+									while($row = mysql_fetch_array($result)){
+										echo "<div>".$row["username"]."</div>";
+									}
+								</script>
+							</code></pre>
+						</div>
+					</section>
+
+					<!-- laravel -->
+					<section data-auto-animate>
+						<h2>Laravel</h2>
+						
+						<div style="display: flex">
+							<pre style="width: 100%;"><code data-trim data-noescape data-line-numbers="2-5,8-12">
+								<script type="text/template">
+									// controller
+									<?php 
+									Route::get('/', function () {
+										return view('greeting', ['users' => User::all()]);
+									});
+
+									// view
+									<div>
+										<?php foreach ($users as $user): ?>
+											Hello, <?php echo $user->name; ?> <br />
+										<?php endforeach; ?>
+									</div>
+								</script>
+							</code></pre>
+						</div>
+					</section>
+
+					<!-- frameworks -->
+					<section data-auto-animate>
+						<h2>Frameworks Modernos</h2>
+						
+						<div style="display: flex">
+							<img src="assets/fws.png" alt="JS Frameworks" style="max-width: 50%;">
+
+							<ul style="display: flex; flex-direction: column; justify-content: center;">
+								<li>Controle do frontend no navegador</li>
+								<li>Controle de compatibilidade com JS e navegadores antigos</li>
+								<li>Focado em melhorar a experiência do desenvolvedor que foca no frontend</li>
+							</ul>
+						</div>
+					</section>
+					
+					<!-- SPA -->
+					<section data-auto-animate>
+						<h2>SPA: Single Page App</h2>
+						
+						<div style="display: flex">
+							<img src="assets/spa.png" alt="SPA" style="max-width: 50%">
+
+							<ul style="display: flex; flex-direction: column; justify-content: center;">
+								<li>O backend e frontend são separados</li>
+								<li>Você precisa de uma API para ter acesso ao backend</li>
+								<li>Complexidade herdada para manter os dois em sincronia</li>
+							</ul>
+						</div>
+					</section>
+
+					<!-- Overview -->
+					<section data-auto-animate>
+						<h2>SPA: Overview</h2>
+						
+						<div style="display: flex">
+							<a href="https://m.phillydevshop.com/turbolinks-5-and-datatables-a882c29d6eff">
+								<img src="assets/harmony.png" alt="Harmony">
+							</a>
+						</div>
+					</section>
+				</section>
+
+				<!-- Getting Started -->
+				<section data-auto-animate>
+					<!-- Intro -->
+					<section data-auto-animate>
+						<img src="assets/phoenix.png" alt="Phoenix" style="max-width: 240px">
+						<h2>Phoenix LiveView para Devs Frontend</h2>
+					</section>
+					
+					<!-- Phoenix -->
+					<section data-auto-animate>
+						<h2 class="sr-only">Phoenix Framework</h2>
+						
+						<div style="display: flexs">
+							<img src="assets/phx.png" alt="Phoenix" style="max-width: 50%; height: auto">
+
+							<ul style="display: flex; flex-direction: column; justify-content: center;">
+								<li>Framework web principal da linguagem Elixir</li>
+								<li>Foco na experiência do desenvolvedor</li>
+								<li>Operações em tempo real são cidadãos de primeira classe</li>
+							</ul>
+						</div>
+					</section>
+					
+					<!-- LiveView -->
+					<section data-auto-animate>
+						<h2>Phoenix LiveView é meu framework JS favorito</h2>
+						
+						<div style="display: flexs">
+							<ul style="display: flex; flex-direction: column; justify-content: center;">
+								<li>Reativo através de WebSockets</li>
+								<li>Coordenação com backend em tempo real</li>
+							</ul>
+						</div>
+					</section>
+
+					<!-- Modern Dev vs LV -->
+					<section data-auto-animate>
+						<h2 class="sr-only">
+							Comparaçao
+						</h2>
+
+						<div style="display: flex">
+							<img src="assets/desenvolvimento-moderno.png" alt="Desenvolvimento web moderno">
+						</div>
+					</section>
+
+					<!-- Livesockets -->
+					<section data-auto-animate>
+						<h2 class="sr-only">
+							Live Sockets
+						</h2>
+
+						<div style="display: flex">
+							<img src="assets/livesockets.png" alt="Live sockets">
+						</div>
+					</section>
+
+					<!-- Diffs -->
+					<section data-auto-animate>
+						<h2>
+							Diffs via WebSockets
+						</h2>
+
+						<div style="display: flex">
+							<img src="assets/phx-diff.jpg" alt="Diffs" style="max-width: 50%">
+	
+							<ul style="display: flex; flex-direction: column; justify-content: center;">
+								<li>Exemplo de redirecionamento</li>
+								<li>Diff otimizada para renderização e menor latência do servidor</li>
+								<li>Heartbeats</li>
+							</ul>
+						</div>
+					</section>
+
+					<!-- 2M sockets -->
+					<section data-auto-animate>
+						<h2>
+							<a href="https://phoenixframework.org/blog/the-road-to-2-million-websocket-connections">
+								The Road to 2 Million Websocket Connections in Phoenix
+							</a>
+						</h2>
+
+						<div style="display: flex">
+							<img src="assets/2m-sockets.png" alt="The Road to 2 Million Websocket Connections in Phoenix">
+						</div>
+					</section>
+					
+					<!-- Real time -->
+					<section data-auto-animate>
+						<h2>Desenvolva apps em tempo real com Channels</h2>
+						
+						<div style="display: flex">
+							<div style="max-width: 50%;">
+								<iframe width="560" height="315" src="https://www.youtube.com/embed/MZvmYaFkNJI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+							</div>
+
+							<ul style="display: flex; flex-direction: column; justify-content: center;">
+								<li>Você se "inscreve" nos canais</li>
+								<li>Quem produz conteúdo pros canais dispara mensagens pros inscritos</li>
+								<li>Incritos recebem um evento e modificam a UI</li>
+							</ul>
+						</div>
+					</section>
+
+					<section data-auto-animate>
+						<h2>Alternativas</h2>
+
+						<div style="display: flex; justify-content: space-around;">
+							<img src="assets/livewire.webp" alt="Livewire" style="max-width: 45%">
+							<img src="assets/hotwire.png" alt="Hotwire" style="max-width: 45%">
+						</div>
+					</section>
+				</section>
+
+				<!-- showdown -->
+				<section data-auto-animate>
+					<section data-auto-animate>
+						<h2>Showdown</h2>
+						<p>Como SPAs e LiveView se diferenciam no fim das contas?</p>
+					</section>
+
+					<!-- js bundle size callout -->
+					<section data-auto-animate>
+						<h2>Não mande toneladas de JavaScript pro navegador</h2>
+						<p>LiveView torna <span class="good-text">mínima a quantidade</span> de JS necessária para o sistema rodar</p>
+						<p>SPAs essencialmente <span class="bad-text">enviam o frontend do site todo</span> para o cliente</p>
+					</section>
+
+					<!-- The cost of SPA: YouTube -->
+					<section data-auto-animate>
+						<h2>
+							Primeiro carregamento do YouTube.com
+						</h2>
+
+						<div style="display: flex">
+							<img src="assets/youtube-js.jpg" alt="Youtube JS load" style="max-width: 50%">
+	
+							<ul style="display: flex; flex-direction: column; justify-content: center;">
+								<li>2.2MB de JavaScript no primeiro load</li>
+								<li>1.5MB apenas da biblioteca Polymer</li>
+							</ul>
+						</div>
+					</section>
+
+					<!-- Lazy load -->
+					<section data-auto-animate>
+						<h2>
+							Lazy Load
+						</h2>
+
+						<div style="display: flex">
+							<img src="assets/lazy-load.jpeg" alt="Lazy loading" style="max-width: 50%">
+	
+							<ul style="display: flex; flex-direction: column; justify-content: center;">
+								<li>Baixar o essencial no início</li>
+								<li>Baixar o resto conforme vai usando</li>
+								<li>Runtimes são relativamente pesados</li>
+							</ul>
+						</div>
+					</section>
+
+					<!-- The cost of SPA: Google -->
+					<section data-auto-animate>
+						<h2>
+							Lazy Load do Google.com
+						</h2>
+
+						<div style="display: flex">
+							<img src="assets/google-js.jpg" alt="Google JS load" style="max-width: 50%">
+	
+							<ul style="display: flex; flex-direction: column; justify-content: center;">
+								<li>611kB de JavaScript no primeiro load</li>
+								<li>861kB conforme você vai usando a mesma página</li>
+								<li>1.9MB quando você pesquisa</li>
+							</ul>
+						</div>
+					</section>
+
+					<!-- The cost of liveview: livebeats -->
+					<section data-auto-animate>
+						<h2>
+							livebeats.fly.dev
+						</h2>
+
+						<div style="display: flex">
+							<div style="max-width: 50%">
+								<img src="assets/livebeats-site.jpg" alt="Livebeats Site">
+								<img src="assets/livebeats.jpg" alt="Livebeats JS load" >
+							</div>
+	
+							<ul style="display: flex; flex-direction: column; justify-content: center;">
+								<li>Aplicação LiveView focada em ser um exemplo de app grande</li>
+								<li>60.6kB de carregamento de JS + HTML + CSS</li>
+								<li>44.5kB apenas de JS</li>
+							</ul>
+						</div>
+					</section>
+
+					<!-- js compatibility -->
+					<section data-auto-animate>
+						<h2>Compatibilidade da linguagem de programação com o cliente</h2>
+						<p>LiveView roda no servidor portanto <span class="good-text">basta seu Elixir estar atualizado</span> para ter acesso a novas vers˜ões</p>
+						<p>JS de SPAs <span class="bad-text">depende de ferramentas extras</span> para ter suporte a tecnologias novas e navegadores antigos</p>
+					</section>
+
+					<!-- Babel -->
+					<section data-auto-animate>
+						<h2>
+							Funcionava no meu PC ™️
+						</h2>
+
+						<div style="display: flex">
+							<img src="assets/babeljs.jpeg" alt="BabelJS" style="max-width: 50%">
+	
+							<ul style="display: flex; flex-direction: column; justify-content: center;">
+								<li>JavaScript não funciona em todos lugares</li>
+								<li>Transpilers e Polyfills</li>
+								<li>Aumenta o tamanho do seu bundle</li>
+							</ul>
+						</div>
+
+						<pre style="width: 100%;"><code data-trim data-noescape data-line-numbers="">
+							<script type="text/template">
+								# .browserslistrc
+								last 2 versions
+								Firefox ESR
+								not dead
+							</script>
+						</code></pre>
+					</section>
+
+					<!-- SSR -->
+					<section data-auto-animate>
+						<h2>Compatibilidade da linguagem de programação com o cliente</h2>
+						<p>LiveView roda no servidor e <span class="good-text">envia uma primeira versão pronta para ser visualizada</span> no site</p>
+						<p>Sistemas JavaScript <span class="bad-text">necessitam de suporte adicional</span> para SSR</p>
+					</section>
+
+					<!-- SSR with JS -->
+					<section data-auto-animate>
+						<h2>
+							SSR com frameworks famosos
+						</h2>
+
+						<div style="display: flex">
+							<img src="assets/nextjs.png" alt="NextJS" style="max-width: 25%">
+							<img src="assets/nuxt.png" alt="NuxtJS" style="max-width: 25%">
+	
+							<ul style="display: flex; flex-direction: column; justify-content: center;">
+								<li>NextJS e NextJS são os mais conhecidos</li>
+								<li>Agora você precisa de um novo servidor</li>
+								<li>Alguns simplesmente nem tentam</li>
+							</ul>
+						</div>
+					</section>
+
+					<!-- youtube shell -->
+					<section data-auto-animate>
+						<h2>
+							YouTube sem JavaScript
+						</h2>
+
+						<div style="display: flex">
+							<img src="assets/youtube-shell.jpg" alt="Youtube sem JS" style="max-width: 50%">
+	
+							<ul style="display: flex; flex-direction: column; justify-content: center;">
+								<li>O index.html possui uma casca em HTML</li>
+								<li>Nenhum tipo de feedback da necessidade de JS</li>
+								<li>Nenhum load inicial do HTML no backend</li>
+							</ul>
+						</div>
+					</section>
+
+					<!-- Offline -->
+					<section data-auto-animate>
+						<h2>A internet caiu!</h2>
+						<p>LiveView <span class="bad-text">ficaria inoperável</span></p>
+						<p>Sistemas JavaScript tem <span class="good-text">opções para funcionar mesmo com zero internet</span></p>
+					</section>
+
+					<!-- pokedex.org -->
+					<section data-auto-animate>
+						<h2>
+							Pokedex.org
+						</h2>
+
+						<div style="display: flex">
+							<img src="assets/pokedexorg.jpg" alt="Pokedex.org" style="max-width: 50%">
+	
+							<ul style="display: flex; flex-direction: column; justify-content: center;">
+								<li>Service Workers</li>
+								<li>PWA: Progressive Web App</li>
+							</ul>
+						</div>
+					</section>
+
+					<!-- Overhead -->
+					<section data-auto-animate>
+						<h2>O custo do sistema executar</h2>
+						<p>LiveView <span class="bad-text">gera um custo do servidor</span> equivalente o número de usuários concorrentes</p>
+						<p>Sistemas JavaScript delegam esse <span class="good-text">custo ao cliente</span></p>
+					</section>
+
+					<!-- latency -->
+					<section data-auto-animate>
+						<h2>latência</h2>
+						<p>A velocidade do LiveView é proporcional a <span class="bad-text">latência do servidor com o cliente nas renderizações</span></p>
+						<p>Sistemas JavaScript <span class="good-text">não tem esse problemas nas partes estáticas</span> porém <span class="bad-text">tem o mesmo problema que LiveView em chamadas de API</span></p>
+					</section>
+
+					<!-- edge -->
+					<section data-auto-animate>
+						<h2>
+							Edge Computing
+						</h2>
+
+						<div style="display: flex">
+							<img src="assets/edge-computing.png" alt="Edge Computing" style="max-width: 50%">
+	
+							<ul style="display: flex; flex-direction: column; justify-content: center;">
+								<li>Mantenha seus servidores mais perto dos seus usuários</li>
+								<li>Divida o peso do backend entre multiplos servidores</li>
+								<li>Latências menores de 100ms dão a impressão de estar em localhost</li>
+							</ul>
+						</div>
+					</section>
+
+					<!-- overview -->
+					<section data-auto-animate>
+						<h2>
+							Visão geral
+						</h2>
+
+						<div style="display: flex">
+							<div style="flex: 1">
+								<h4>LiveView</h4>
+
+								<ul>
+									<li>Arquitetura simplificada</li>
+									<li>Aplicações em tempo real built-in</li>
+									<li>SSR embutido</li>
+									<li>Processamento no servidor</li>
+									<li>Não indicado para ambientes offline-first</li>
+								</ul>
+							</div>
+
+							<div style="flex: 1">
+								<h4>SPA</h4>
+
+								<ul>
+									<li>Maior custo arquitetural</li>
+									<li>Aplicações em tempo real são um extra</li>
+									<li>SSR é um extra</li>
+									<li>Processamento no cliente</li>
+									<li>Offline-first com um pouco de esforço</li>
+								</ul>
+							</div>
+						</div>
+					</section>
+				</section>
+
+				<!-- basics of liveview code -->
+				<section data-auto-animate>
+					<!-- Header -->
+					<section data-auto-animate>
+						<h2>Renderizando código em HTML</h2>
+					</section>
+
+					<!-- Other frameworks rendering assigns -->
+					<section data-auto-animate>
+						<div style="display: flex; justify-content: space-evenly;">
+							<div>
+								<h4>VueJS 2</h4>
+
+								<pre style="width: 100%;"><code data-trim data-noescape data-line-numbers="3,10">
+									<script type="text/template">
+										<template>
+											<div>
+												Ola {{quem}}
+											</div>
+										</template>
+		
+										<script>
+										export default {
+											data() {
+												return { quem: 'mundo' }
+											}
+										}
+										</script>
+									</script>
+								</code></pre>
+							</div>
+
+							<div>
+								<h4>React</h4>
+								<pre style="width: 100%;"><code data-trim data-noescape data-line-numbers="2,5">
+									<script type="text/template">
+										export default () => {
+											const quem = 'mundo'
+	
+											return (
+												<div>Olá {quem}</div>
+											)
+										}
+									</script>
+								</code></pre>
+							</div>
+						</div>
+					</section>
+
+					<!-- LV rendering assigns -->
+					<section data-auto-animate>
+						<div>
+							<h4>index_live.ex</h4>
+
+							<pre style="width: 100%;"><code data-trim data-noescape data-line-numbers="5">
+								<script type="text/template">
+									defmodule MyAppWeb.IndexLive do
+										use MyAppWeb, :live_view
+
+										def mount(_params, _session, socket) do
+											{:ok, assign(socket, quem: "mundo")}
+										end
+									end
+								</script>
+							</code></pre>
+						</div>
+
+						<div>
+							<h4>index_live.html.heex</h4>
+							<pre style="width: 100%;"><code data-trim data-noescape data-line-numbers="2">
+								<script type="text/template">
+									<div>
+										Ola <%= @quem %>
+									</div>
+								</script>
+							</code></pre>
+						</div>
+					</section>
+
+					<!-- HEEX explanation -->
+					<section data-auto-animate>
+						<h2>EEx e HEEx</h2>
+
+						<ul>
+							<li>
+								EEx: Embedded Elixir
+
+								<ul>
+									<li>Oficial do Elixir</li>
+									<li>Genérico para qualquer código</li>
+									<li>
+										<a href="https://www.mitchellhanberg.com/how-eex-turns-your-template-into-html/">
+											Gera código
+										</a>
+									</li>
+									<li>Extensível</li>
+								</ul>
+							</li>
+							<li>
+								HEEx: HTML+EEx
+								<ul>
+									<li>Entende HTML</li>
+									<li>Valida na compilação</li>
+									<li>Minimiza conteúdo enviado pelo servidor</li>
+								</ul>
+							</li>
+						</ul>
+					</section>
+
+					<!-- if/else -->
+					<section data-auto-animate>
+						<div>
+							<h4>index_live.ex</h4>
+
+							<pre style="width: 100%;"><code data-trim data-noescape data-line-numbers="5">
+								<script type="text/template">
+									defmodule MyAppWeb.IndexLive do
+										use MyAppWeb, :live_view
+
+										def mount(_params, _session, socket) do
+											{:ok, assign(socket, active: false)}
+										end
+									end
+								</script>
+							</code></pre>
+						</div>
+
+						<div>
+							<h4>index_live.html.heex</h4>
+							<pre style="width: 100%;"><code data-trim data-noescape data-line-numbers="2-6">
+								<script type="text/template">
+									<div>
+										<%= if @active do %>
+											Ativo
+										<% else %>
+											Inativo
+										<% end %>
+									</div>
+								</script>
+							</code></pre>
+						</div>
+					</section>
+
+					<!-- loops  -->
+					<section data-auto-animate>
+						<div>
+							<h4>index_live.ex</h4>
+
+							<pre style="width: 100%;"><code data-trim data-noescape data-line-numbers="5">
+								<script type="text/template">
+									defmodule MyAppWeb.IndexLive do
+										use MyAppWeb, :live_view
+
+										def mount(_params, _session, socket) do
+											{:ok, assign(socket, pessoas: ["Joe", "Valim", "Chris"])}
+										end
+									end
+								</script>
+							</code></pre>
+						</div>
+
+						<div>
+							<h4>index_live.html.heex</h4>
+							<pre style="width: 100%;"><code data-trim data-noescape data-line-numbers="2-4">
+								<script type="text/template">
+									<ul>
+										<%= for pessoa <- @pessoas do %>
+											<li><%= pessoa %></li>
+										<% end %>
+									</ul>
+								</script>
+							</code></pre>
+						</div>
+					</section>
+				</section>
+
+				<!-- studies -->
+				<section data-auto-animate>
+					<section data-auto-animate>
+						<h2>Guia de estudos</h2>
+						<p>Como aprender Elixir sendo dev front end?</p>
+					</section>
+
+					<section data-auto-animate>
+						<h2>Instale o Elixir e escreve um Hello World!</h2>
+
+						<ul>
+							<li>Recomendo usar asdf para instalar</li>
+							<li>Se você usa Windows, instale na WSL 2</li>
+						</ul>
+
+						<pre><code>elixir main.exs</code></pre>
+
+						<pre style="width: 100%;"><code data-trim data-noescape data-line-numbers="3,10">
+							<script type="text/template">
+								# main.exs
+								IO.puts("Hello World")
+							</script>
+						</code></pre>
+					</section>
+
+					<!-- elixir school -->
+					<section data-auto-animate>
+						<h2>Elixir School</h2>
+
+						<img src="assets/elixir-school.jpg" alt="Elixir School" style="max-height: 300px;">
+
+						<p>Recomendado apenas o Básico e Ecto para você poder começar a mexer com Phoenix</p>
+					</section>
+
+					<!-- phx site -->
+					<section data-auto-animate>
+						<h2>Phoenix Framework</h2>
+
+						<img src="assets/phxsite.jpg" alt="Phoenix Framework" style="max-height: 300px;">
+
+						<p>Seguir os primeiros passos para instalar e tentar mexer um pouco</p>
+					</section>
+
+					<!-- phx site -->
+					<section data-auto-animate>
+						<h2>Phoenix Framework</h2>
+
+						<img src="assets/phxsite.jpg" alt="Phoenix Framework" style="max-height: 300px;">
+
+						<p>Seguir os primeiros passos para instalar e tentar mexer um pouco</p>
+					</section>
+				</section>
+
+				<!-- questions -->
+
+				<section data-auto-animate>
+					<h2>Dúvidas?</h2>
+					<img src="assets/wonka.jpg" alt="Wonka">
+				</section>
 			</div>
 		</div>
 
